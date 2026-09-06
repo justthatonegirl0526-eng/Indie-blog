@@ -1,7 +1,95 @@
-* {
-	font-family: "PT Sans";
+:root {
+  /* Fonts */
+  --default-font: Arial, sans-serif;
+  --heading-font: "Cardo",  sans-serif;
+  --nav-font: "Inter",  sans-serif;
+  
+  /* Base */
+  --background-color: #f8f7f3;
+  --surface-light: #ffffff;
+  --surface-dark: color-mix(in srgb, #d5BC97 75%, white);
+
+  /* Typography */
+  --text-color: #25221d;
+  --muted-color: #756f66;
+
+  /* Borders / Lines */
+  --line-color: #ded7cb;
+
+  /* Accent System */
+  --accent-color: #36b399;
+  --accent-soft: #95cdba;
+
+  /* Interactive */
+  --focus-color: #F0A81A;
+
+  /* Contrast */
+  --contrast-color: #faf7f2;
+
+  /* Effects */
+  --shadow: 0 14px 36px rgba(40, 34, 26, 0.09);
+
+  /* Smooth scroll */
+  scroll-behavior: smooth;
 }
 
-.font-pt-serif {
-	font-family: "PT Serif";
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
 }
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-family: var(--heading-font);
+}
+
+/* Preloader
+
+#preloader{
+  position:fixed;
+  inset:0;
+  background:var(--surface-dark);
+
+  z-index:99999;
+
+  transform:translateX(0);
+  pointer-events:none;
+  box-shadow:-12px 0 30px rgba(0,0,0,.25);
+  transform-origin:right center;
+}
+
+#preloader.open{
+  animation:pageOpen .8s cubic-bezier(.7,0,.2,1) forwards;
+}
+
+@keyframes pageOpen{
+  0%{
+    transform:translateX(0) skewX(0);
+  }
+  100%{
+    transform:translateX(-105%) skewX(-4deg);
+  }
+}
+
+*/
