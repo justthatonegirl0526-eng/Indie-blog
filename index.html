@@ -1,116 +1,175 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>라푸위키</title>
-        <link rel="icon" href="https://i.namu.wiki/i/eszPfZduZVPkkJq0SLdZm46ffkqxMxLjolI_0o3i0yIxH5e-Bs4ePHgku_xO5SBGLtuxOcv8twILb0tltwg57Q.webp">
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link href="main.css" rel="stylesheet">
-    </head>
-
-    <body class="main-page">
-    <div class="navbar">
-    <div class="logo" style="margin-left: 27px;">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAABQCAYAAAAnSfh8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAEyBJREFUeF7tnQW0NDcVgHG3AsWdClKgUNxdixZoixe3g7sXd5dCCy0VoGiF4k6haIHiXpzi7vzl+153h8nkzs7svN333rw/95zvJLmTychOZpKbm+zJTjzxxEKhMFJCZaFQGAehslAojINQWSgUxkGoLBQK4yBUFgqFcRAqC4XCOAiVhUJhHITKQqEwDkJloVAYB6GyUCiMg1BZKBTGQagsFArjIFQWCoVxECoLhcI4CJWFwpjZsmXL9WFvOBD2gXvD+aK8YydUFgpjhEp6U/ga/AP+Df+F/8C/4E/wPDhztO9YCZWFwsg4DRXz/nAC8VZhu5X67XBRkieHqKxRESp7cnJuxPnganCdCRdHf6pGvkJhqfDc3Q5+TbyXkPdtBNtAWN6YCJU9uAg34SXwWfgOfF/Qf4HwRbAd8U3xhitsbHjWzgjfIN5byG+z+kFEwzLHRKicBRd+Pfge/JN0Jujtf3wdrkOyVOLCUuE58+v7X+KZTJ7Ff0+SiaD/FsHon89Q2YJN5qvCt4l3Cvl+D9cgGpVVKCwEnrGDCBNBpzyV6JlgZ+LfXNlQk5OybLk00bDcsRAqWzgnF3w4YSLobI5YWbdMVJWg+hZsSzQqr9Af+2s+iDeCm0/Q5rAD+q3a5sA9OIIwEXQ/gtMTnebZA7KvNLqrEmRljolQGcHFOrb2J+KVkP4JwdMIbw+PhORNR9rK/QSiYZmFTrSu3gQOBm0NVbeFuC/Nz8OzYXtU0f6bHq49qsA/JTgrTPM8CDZKBT4Vx70kOOTli/jGoM1o0Is4VAacgoM8nrAS0n+F+8D0TXdK4tcCK3UlpD9A0CwvgTzbwm2J31eI3wLOUc+zFWKX5WbwA/gP6VDYZj/vPbAjyaicTQ3XvS9hJuhfQ7AL3IH4D1aUuVwMwnKXxCU4lzfCt+Gn8DP4CXwTDmH7zo38nYTKACtncqNIf4/g1FDlQ3dmOJB4JaS/CG3NaPsofsG9CF8If5vwFzge7s/2M9TybzVw7ReFX0LWNWkKWWzp7E/0bBCWt4m5TXSPUE2dN3yuou1fJzgFRGUuHI5nS8pK22ZU8zf0fHcjGZYRESoDrMCvJ6yE9CcJmla8M6Dfh7AS0l+GCxCt5/OLflk4BkILosI25eWwtX2NT801f5xwLmGfmxP0sqyS9/xwK7jjKrH7pGPEkMrguZ6J/a8AT4TPwUqFQ3yYj2G7L3ibnFWftgnbvkrYW8hv5b470bC8BeOzflv4G/FOIZ/XfUuip4SovIRQGWAFfjFhXf6A7oqE9XyXgC9AJeT5BCQ3n/SO8Elorbx1Id+b4OxE68fatHCt9o3+RTwRdL6lHaLzTR716Xzgk1ZRG+T9IuFChLKseDrxhMdqwS6CFdcm5Z9JtwrbfwP6F1yWZPSCuiHb7Pd2Cvn8Ah4Ap4NmOctgF46pMbezJTUVsh4LvSzkoTLAm+2btnqoiOtn+nHw7bIT2Cl/P1T9NeLmseLXy9Iw82TIxpHRnQCJoWwq6PcmqJezaeFaXwNRBX0pgQ+Eho9PN/OQ9styOaJhuQ0WJhzTfvrViEbHCSH/NcAHte9LXDdI81+bZLM8n6m7wQ+Jtwrb/bo7ueGCJNdiDFiDlS+e0GeiTcj/d9DRpPNlHCpbuBiFfp6wEtJ+EX4N9mGtfM0HSgNLYlwhfXaw/1EJaZsNj4HtQYvcc0/a8n9B74+zKdzfuuBaD4HmvfwOwbSP6wv1rvB3tzXkhpCVGbAw4TzmqsDk3Q7m8p6aCvvp9ZcZ7NCdFq4OPyOdCfp/goZY7+FaVF7P6RxwJPFE0GnneRJcCh4Pv5lsqgTdWwjOCWHZU0JlC74N7I/8g7CXkPdlBM2bdR70SXOC5MEElRmd9OnhtW6bCumtxjGE64wqsP28qp9J2mG9v7qtIWOowNn19RX2Uw4lehpolu2LzRddJuj9SPRtnSwEjmcFzboq6F5JMH0Zn5V0YvhV0Nn1PD/RrNw6obINCnS4x5vf1Wex6fxyollHHL3DRYmgux5BM5+OCpXFjrg/gPsm+TYjXOcbIHvA0dlMdAKJRp0PtOTpW5EyYV/FVpOjABGhIQZ97wpMPpv/vyWeCXqbjj+Eb4DOGG3HM8+1iEblh56C6H1+diKa7bMsON6l4VjiiaC7F8H0g+VL54Xq64LOF/ZFICu3TqicBQXbLLgnvBt+hS4T9DZX/FpmTRX0WkoTQXcDgno+L0qz+1+IrwjxhVVgyvHGaoG1QuwOV4IzRnnXA85lN4iMWPYDnUCiL3o2NozOZmn0ZYrIhP11FnkY7NXCA+Bzk+yVoJunAr8OomuzC/YIsHntBAV/o/tB1q9FZ1//EUSzPiL6DVOBwUk/nyBMBJ22o8sT1UKtIfhjKxtqgl570nmJRuVWhMo+UPgFwKmEd4KHQ7N/7Lhk5F1iXzrpu5F2elf9wXMY5c2ElZD2re3AfL2suaCMy8P+cBw4iP47+BVoJTwSbka+XlbcZcJ5+AAn97OPsM+dCfoO5yTCvraaHOufuT959iRMBF3fCrwN+cLhMfQPJ8ieF/R3hsjg6blmNhH0G6kCO6xqXzYRdNqOfAY/CI4qRNf3AgL9JKJyK0LlnNhM1gq4O2ElpG2KOT7YzH829J8mrIS0TaeDwOaVOOk6uSjS/jCD3M2E/TX6+KC1DaT7AP+cqN5ggysxZVj5NEy8rYZLu9yY7fOcv9bmqgXSJeQ9DObxO0+Efb1+rdxR3gryOLyRCLq+FfhC5PssYSLoNEyF547+wnAc8UTQ+cLNvlDoBlVgtjl09xao/25DsIVZbx7bavk98d5Cfg3DjgV3GttC5UA82aS5Q/qZBM18fmk1hjWNNIpvJmkauXy4Hka0WVYv2NchC6ePdcrkWDchOshSyb4+CJbRlKOg6dAyC++nzfs/ujPpUNjksTSUzOuGl8iknM4KDI71J8J+81TgqAn+JTgL0Wwf9OeG7KuNzvuZrXOFbugX2Lns0e82r/gRqFuPnQSkQarXOLD5kPfCuUnWzy8kVA6Fgz6WsBLSv4XszYrOfs77IPwa1sU8cAQM6qNO9nPgPhH0thBsQmeWXHQ2qwf5FrPfHoSZoP8IRC2SVsjv0IgtB/u9oT80ep35h3QtEqGcvhXYF0Ui7NerApNHA5zOJomgc1gltBCjvzL8jngi6N4B2UOObugX+LuEC5HmeZG+HPgb9nnenaDSe7QlVA6FA18cjie+IsT9moazkdDrVfNW8xC2Ctt1t5zrwa/Dvnr7JA8AaT2ZHg1OBr8LvG+yqRJ0mvrDMmfBfgurwDUcGvoDZEKZoTW2B4lQjmLXZeaib2zXoSYRdH2/wHa13gmR9fyjkDSJSevueZTbm4LeBeqylzq6DVeBBd0O8CxoM/z60dCBZ65+eqhcBXbam+O3egy1NQccE94VPgzh+DJ6ZzcNduBg/0cSNsUZKqclnObxxZP0s0jb5M7K64L9llGBnQucfYUU9FchiPbpIhPK8iF3eGpf0GOpyYcg+hr2rcDeHx0YsuEhdL7s/frsRdL+v4vUHa3+pBz/F3QOaenLHI1ybMgKLOhtgXyUeCRvhfNAtt8sQuVq4AT3hGqcj/jPQQNOmB+0emptuxDo03rLxv72HTQsDe2TJmNspH9M0DQm6fL2JMJKSDsTSK+wer5O2Ge0FVihPJvSdlsiwn4c6nkq8AXhF8QzQa/YnLayadhsO95XIfQVRj+0AmfjtUOFstoqsEOwWWtPQe/Y/9zdxFC5GjgJmwqJoYL0M6H64nVB3lcQVkLahQIGOZ+z74sIKyGt03vTwaRU4FUI59C7Agt5He+N3EA7hf20XTyRaFvZQyuwbrzPh0N7YP9by3nbC2a8FXjCczmZ6gcifiy4/EuUN4O83sykmUX6LgRh/ha0BF6T/VxQoCl3gKoSk8e+1tFumAppJ4F3jsM1Yb9SgTsgr66yr4DMoWOWkF8Hof0gtFgL2wZV4DlxhED/hzaPsnFXYE7kMlA1k4h74x9AtGt8Vb/QOxIeQNh09nDKWteq+t7Y88JDwWEGFx3IBL2GtscRuoLIvcAB9cRCSNoVEqJjzIT9SgXuhy9YhxP/SNgp5LNF9GSiM+0h5FmLCuz0Wr3EwnNHP/ovsBeo0aOyNhJ3AYBqnaIGp2O77pmfAed+RoYLx0NvSjTaXzSIaSDxrzX8sVrH3dyG/Bl+AeEgO3qt5NFxZsJ+o6jA7JcsvDBUKEfxZTlk8UKNnrpozmqO2id37rjLC3U+4OQZXIHZ7ow4nW5mQl5HT3S22LRNaE9W54nm/GHXiq7ncQkejV769urfOqvSaUTRvax5HMeUXWTeMd3OcbY+QjkuSdrXJTGBfcfyBbY15HJFq4Zz0L4xyMgIdmV8gTuv3Je+fsJTXgVWXMvv9XuQd2gf2PF2DWg+p52wT6uwffwVWDih9xNWQvrdBPrDOrDtOJ5fwLa3mK6UrvpRfY2JO8zgj+DX1gF+f/DWJhjbnMBt804H+leDFvG24ylOWXQsrnX5li7Yd60rsGO3XlsdjYaukDG0Uo0WrntoBX4ILOoDsKErsJVHd0HH6VxZ41Fgh97ZFUledFayyqeZuBZEH7hwMFthm01lvbR0tLCf8aPJJrfZ7NXf1PHBaC6seXxDOhXNSQuumjn90Zwg4ZizN0oH8rqRzUquddHKN7fhqs6kjEzQL6UCR0Je74ErQcz9QIwdrrlU4BZs6rgCoIP5rsCxMieY0Kav/VYrhQvQ1f1T9bxJJi60CflWPFGI6nXkmLDHs3n2LpjprTUV8ulh9XTQoNK28oItAPu31yV0oXTRW8ubPqjZXIdy1r0CK+TXoSaxOaBz2SM9oXTWWAaHQ2g7QO/Da+sg2m+1OJNpepxSgQO07up2mC2bUxe2aW32S6bHiWs7+7WcOd7Hdr+4LwB9j/36JZUOvWtxdc3K0RH9wYS2Dmz+rlvTkeO3VWAdSBxecwH8WexKvuaY96IqcGJYXLRQtvJ0otn9R+8iBHMNG/UVynVUYWWNZ+JDjVje497/cDhLKGdjVWAKdu5vuNZQU8in2Le1udzW33Sbqyo4j/hcqGZ9+Xx5RP9to8FBj5xps3fVX89FMDmfUNiWGEJa0KXQMe/69SyqAjtHe6nCMZ5PEFXgSxEuRSjbIaYVPwPCoRXY58y1uKd/lTsLvQUd1hyFFVoL4XsJE0Fnf9QVHJwY39nEJY9WZPumXsA9oLd/M/s44SC5WSRdlkQraLjPesF5tVbgvkIZriVWd/ectw+sX7ljrMkDQbpU4MZ5DYWytAO1LaC3oSqw/snNpo9NVldK0EjlBPxXBnlWBL0P08cIbR769upyxohw8e+vEVZC+lUEUd51hfNa0wqM3u6H//1TgfoehNncY3SbtQLb4luxLxCuVQW+CmQtQwX9xqnAFKpRqD6U49BMMp4LrrKho0Yi6JzH6xIsGqVWtVQN5dyPsBLS/iBDnAeWCue01hV4nnFgK3bo/rcIoWxbWM3F/ldAr10km8y/CKFcX0wrSzIRLxW4DoX6z3h1j6qvQPYvCegeStgUm8nNiQODoHz9lZP1c0k/hSDMv15wThu5AvsS1Trv7xJCeRors385QGd3yRGGcL8J9rnbbBH2MW19Rft53E8RZoL+UQThPlPIU43bEy8VuA6F+tcX9Qqsq2K0ykYy75a0X+2+KyR2Qnk6wNtUr/rCRH2jL+QFsSg4p+sT6oDidLghONf1gZRRv65FVeBOKM8ukRbzRNBptBns4NIFZWd/E6qg916E+0SQf60qsAskHgv151HxRRf+DRD6danAD4amo7+VtXJ4IH1F+LLbpkLadZpW1Wxu4BvcpWBPIL4ixL9E0OZfvV449q3DiA4uc8P+GviaziRbQwXO/jxeQb8hKzA4BdXWiu6eevqJcf31m/PNV2DbulRg5/c2Hf79wugQ4BrCzwCb1cn4Immbt4v+OrpA2HPAfzzUrfJOQZ7NSKnAPSH/WlXgueH4a1+BwcWnX0KYCDrFm+J4bHOIxz8wnnsyfA+0bjrl0HFp/3ZiYU30jQzX6ks0+/+ciXSu3j8PHKdU4OVhf/0wwkzQ2/qa+3kOlQG6NPZaM4h8Omk4RrvI5vPWjt2HW4NW/elMHdcwdiH3bMhmNVDm2CvwUyBziUTngg3r7ezj73hlQqcjTn9HXWz3Bh2aon1mEipbsBlns7XVNZJtzpHUlW5VEwIK6we/n38zk33F0LmyydL+U5fyoz/40ittyN/puCie11FniP/BhidUzsC/RXE9I9cEst97/ARXntRCrJFpaW/pwvLx9wNngTmbyxEI2Y9t14SlfcE4hqu4uMzO9JiifWVTVrxFESo70DDlpAFXBXRBcd922xNuOLfGwmD8javxYn5f16Bai+anz1B9jLd0wzoIlYVCYRyEykKhMA5CZaFQGAehslAojINQWSgUxkGoLBQK4yBUFgqFcRAqC4XCOAiVhUJhHITKQqEwDkJloVAYB6GyUCiMg1BZKBTGQagsFArjIFQWCoVxECoLhcI4CJWFQmEchMpCoTAGTjzZ/wD/XKihji4QWQAAAABJRU5ErkJggg==" alt = "나무위키 로고">
-    </div>
-        <div class="menu">
-            <a href="#">
-                <svg class="CB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" class="M7oPsJEk zmR1Q1sO" data-v-0d653aeb="">
-                <path d="M210 131C209 131 207 132 206 133L196 143L217 164L227 154C229 152 229 148 227 146L214 133C213 132 212 131 210 131ZM191 149L130 209V230H151L212 169L191 149ZM110 219C59 214 20 171 20 120C20 65 65 20 120 20C173 20 216 61 220 113C217 112 214 111 210 111C202 111 196 115 192 119L165 146L125 122V70H110V130L154 157L110 201V219Z"></path>
-                </svg>
-                <span>최근 변경</span>
-            </a>
-            <a href="#">
-                <svg class="CB" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512" class="M7oPsJEk" data-v-0d653aeb=""><path d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2 0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.3-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9l0 0 0 0-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"></path></svg>
-                <span>최근 토론</span>
-            </a>
-            <a href="#">
-                <svg class="CB" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="M7oPsJEk" data-v-0d653aeb=""><path d="M176 88v40H336V88c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zm-48 40V88c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56v40h28.1c12.7 0 24.9 5.1 33.9 14.1l51.9 51.9c9 9 14.1 21.2 14.1 33.9V304H384V288c0-17.7-14.3-32-32-32s-32 14.3-32 32v16H192V288c0-17.7-14.3-32-32-32s-32 14.3-32 32v16H0V227.9c0-12.7 5.1-24.9 14.1-33.9l51.9-51.9c9-9 21.2-14.1 33.9-14.1H128zM0 416V336H128v16c0 17.7 14.3 32 32 32s32-14.3 32-32V336H320v16c0 17.7 14.3 32 32 32s32-14.3 32-32V336H512v80c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"></path></svg>
-                <span>특수 기능</span>
-                <svg class="CB" xmlns="http://www.w3.org/2000/svg" style = "margin-left: 8px;" height="1em" viewBox="0 0 320 512" class="s5u2EFao" data-v-0d653aeb=""><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"></path></svg>
-            </a>
-        </div>
-        <div class="right-section">
-            <div class="search-box">
-                <input type="text" placeholder="검색...">
-                <button>
-                    <svg style="filter: invert(100%);" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="profile">
-                <svg class="CB" viewBox="0 0 448 512" style="width: 18px; margin-left: 5px;">
-                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path>
-            </svg>
-            </div>
-    </div>
-    </div>
-
-    <div class="container">
-        <div class="main-content">
-            <h1 class="main-title" style="margin-bottom: 0px; margin-top: 5px; font-size:33px;">이 위키는 가짜입니다..</h1>
-            <p class="recentedit">최근 수정 시각: 2026-06-13 16:05:00</p>
-            <div class ="CF" style="font-size:14px;">
-                분류: <a href="#">라푸</a> | <a href="#">분류1</a> | <a href="#">분류2</a>
-            </div>
-            <div class="index">
-                목차
-                <br>
-                <ul style="list-style:none; padding-left:10px;">
-                    <li><a href="#s-1">1</a>. 개요</li>
-                    <li><a href="#s-2">2</a>. 소제목 1</li>
-                    <li><a href="#s-3">3</a>. 소제목 2</li>
-                    <li><a href="#s-4">4</a>. 소제목 3</li>
-                </ul>
-            </div>
-            <div class="content-box">
-                <h2 id="s-1"><a href="#s-1">1.</a> 개요</h2>
-                <p>이 문서는 나무위키의 클론 문서이다.</p>
-                <h2 id="s-2"><a href="#s-2">2.</a> 소제목 1</h2>
-                <p>시작</p></p>
-                <h2 id="s-3"><a href="#s-3">3.</a> 소제목 2</h3>
-                <p>html의 모든 요소를 적용할 수 있다.</p>
-                <h2 id="s-4"><a href="#s-4">4.</a> 소제목 3</h2>
-                <p>끝</p>
-            </div>
-        </div>
-        <div class="sidebar">
-            <div class="sidebox">
-                <div class="sidetitle">
-                    <svg style="filter: invert(50%);" class="side-icon" viewBox="0 0 512 512" width="14" height="14"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-                    <span>실시간 검색어</span>
-                </div>
-                <ol class="sidelist">
-                    <li><a href="https://namu.wiki" target="_blank">검색어 1</a></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 2</a></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 3</a></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 4</a></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 5</a></li>
-                </ol>
-            </div>
-            <div class="sidebox">
-                <div class="sidetitle">
-                    <svg class="side-icon" viewBox="0 0 512 512" width="14" height="14"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
-                    <span>최근 변경</span>
-                    <span class="more-icon">›</span>
-                </div>
-                <ul class="recentlist">
-                    <li><a href="https://namu.wiki" target="_blank">검색어 1</a> <span class="time">13초 전</span></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 2</a> <span class="time">15초 전</span></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 3</a> <span class="time">25초 전</span></li>
-                    <li><a href="https://namu.wiki/w/고양이" target="_blank">검색어 4</a> <span class="time">57초 전</span></li>
-                    <li><a href="https://namu.wiki/w/부엉이" target="_blank">검색어 5</a> <span class="time">2분 전</span></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 6</a> <span class="time">6분 전</span></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 7</a> <span class="time">52분 전</span></li>
-                    <li><a href="https://namu.wiki" target="_blank">검색어 8</a> <span class="time">23일 전</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    </body>
-</html>
+<header class="bg-slate-900 text-slate-200 p-4 lg:px-8 lg:py-6 md:flex gap-2 lg:gap-4">
+	<div class="flex items center justify-between">
+		<div class="flex items-center gap-2">
+			<svg id="logo-15" class="size-8" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M24.5 12.75C24.5 18.9632 19.4632 24 13.25 24H2V12.75C2 6.53679 7.03679 1.5 13.25 1.5C19.4632 1.5 24.5 6.53679 24.5 12.75Z" class="ccustom" fill="#ea580c" />
+				<path d="M24.5 35.25C24.5 29.0368 29.5368 24 35.75 24H47V35.25C47 41.4632 41.9632 46.5 35.75 46.5C29.5368 46.5 24.5 41.4632 24.5 35.25Z" class="ccustom" fill="#ea580c" />
+				<path d="M2 35.25C2 41.4632 7.03679 46.5 13.25 46.5H24.5V35.25C24.5 29.0368 19.4632 24 13.25 24C7.03679 24 2 29.0368 2 35.25Z" class="ccustom" fill="#ea580c" />
+				<path d="M47 12.75C47 6.53679 41.9632 1.5 35.75 1.5H24.5V12.75C24.5 18.9632 29.5368 24 35.75 24C41.9632 24 47 18.9632 47 12.75Z" class="ccustom" fill="#ea580c" />
+			</svg>
+			<h1 class="text-xl font-pt-serif font-bold hover:underline cursor-pointer">
+				ParaType<span class="font-normal">®</span>
+			</h1>
+		</div>
+		<button onclick="toggleClass('site-menu', 'hidden'); toggleClass('site-menu-toggle', 'bi-x-lg'); toggleClass('site-menu-toggle', 'bi-list')" class="text-xl md:hidden cursor-pointer">
+			<i id="site-menu-toggle" class="bi bi-list"></i>
+		</button>
+	</div>
+	<div id="site-menu" class="grow md:flex items-center justify-between gap-2 lg:gap-4 mt-4 md:mt-0 hidden">
+		<nav class="mb-4 md:m-0">
+			<ul class="md:flex items-center">
+				<li>
+					<a class="block h-full hover:bg-slate-800 px-2 py-1 rounded-lg" href="">About</a>
+				</li>
+				<li>
+					<a class="block h-full hover:bg-slate-800 px-2 py-1 rounded-lg" href="">Work</a>
+				</li>
+				<li>
+					<a class="block h-full hover:bg-slate-800 px-2 py-1 rounded-lg" href="">Contact</a>
+				</li>
+				<li>
+					<a class="block h-full hover:bg-slate-800 px-2 py-1 rounded-lg" href="">Subscribe</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="md:flex items-center justify-between gap-2 lg:gap-4">
+			<nav class="relative mb-4 md:m-0">
+				<button id="lang-menu-toggle" onclick="toggleClass('lang-menu', 'hidden'); toggleClass('lang-menu-toggle', 'bg-slate-800')" class="relative block h-full hover:bg-slate-800 px-2 py-1 rounded-lg text-nowrap cursor-pointer w-full md:w-auto text-left">
+					<i class="bi bi-translate"></i>
+					<i class="bi bi-chevron-down"></i>
+				</button>
+				<ul id="lang-menu" class="absolute top-full mt-1 bg-slate-800 border border-slate-700 rounded-lg p-1 hidden">
+					<li>
+						<a class="block h-full hover:bg-slate-700 px-2 py-1 rounded-md text-nowrap" href="">
+							English
+							<i class="bi bi-check text-green-500"></i>
+						</a>
+					</li>
+					<li>
+						<a class="block h-full hover:bg-slate-700 px-2 py-1 rounded-md" href="">Español</a>
+					</li>
+					<li>
+						<a class="block h-full hover:bg-slate-700 px-2 py-1 rounded-md" href="">Français</a>
+					</li>
+				</ul>
+			</nav>
+			<search>
+				<form class="flex items-stretch gap-1">
+					<label class="sr-only" for="search">Search the site</label>
+					<input class="bg-slate-800 px-2 py-1 rounded-l-lg outline-none border border-slate-700 w-full md:w-auto" type="search" id="search" name="q" placeholder="Search" />
+					<button class="bg-orange-600 text-slate-200 px-2 rounded-r-lg" type="submit">
+						<i class="bi bi-search"></i>
+					</button>
+				</form>
+			</search>
+		</div>
+	</div>
+</header>
+<main>
+	<section class="p-4 lg:px-12">
+		<h2 class="text-sm font-bold">Featured</h2>
+		<hr class="mb-2">
+		<article class="md:flex bg-slate-900 text-slate-200">
+			<div class="flex-3">
+				<img class="h-full object-cover" src="https://images.unsplash.com/photo-1521481137585-72bf570cff34" alt="cover image">
+			</div>
+			<div class="flex-2 p-4 lg:p-8 flex flex-col gap-4 md:gap-8">
+				<p class="text-xs font-pt-serif italic">Short Story</p>
+				<h3 class="text-2xl md:text-4xl font-pt-serif">A small river named Duden</h3>
+				<p class="text-sm md:text-base opacity-75">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+				<a href="" class="text-sm md:text-base self-start bg-orange-600 text-slate-200 py-1 px-2 rounded-lg">
+					Read story
+					<i class="bi bi-arrow-right"></i>
+				</a>
+				<p class="mt-4 md:mt-auto text-xs opacity-50">
+					<time>January 12, 2026</time>
+				</p>
+			</div>
+		</article>
+	</section>
+	<section class="p-4 lg:px-12">
+		<h2 class="text-sm font-bold">Latest</h2>
+		<hr class="mb-2">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+			<article class="pb-4">
+				<div>
+					<img class="aspect-4/3 object-cover" src="https://images.unsplash.com/photo-1768405942745-7502121474c7" alt="cover image">
+				</div>
+				<div class="py-2">
+					<h3 class="md:text-2xl text-xl font-pt-serif">The Metamorphosis</h3>
+					<p class="text-xs opacity-50 mb-2">Short Story</p>
+					<p class="text-sm opacity-75">"He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections."</p>
+					<p class="mt-4 text-xs opacity-50">
+						<time>January 12, 2026</time>
+					</p>
+				</div>
+			</article>
+			<article class="pb-4">
+				<div>
+					<img class="aspect-4/3 object-cover" src="https://images.unsplash.com/photo-1768663319852-d2a2648f3950" alt="cover image">
+				</div>
+				<div class="py-2">
+					<h3 class="md:text-2xl text-xl font-pt-serif">The color of chestnuts</h3>
+					<p class="text-xs opacity-50 mb-2">Short Story</p>
+					<p class="text-sm opacity-75">"It didn't matter to him who would step off of the bus that day. It only mattered when."</p>
+					<p class="mt-4 text-xs opacity-50">
+						<time>January 12, 2026</time>
+					</p>
+				</div>
+			</article>
+			<article class="pb-4">
+				<div>
+					<img class="aspect-4/3 object-cover" src="https://images.unsplash.com/photo-1704129661500-0a3db148fb7e" alt="cover image">
+				</div>
+				<div class="py-2">
+					<h3 class="md:text-2xl text-xl font-pt-serif">To Build a Fire</h3>
+					<p class="text-xs opacity-50 mb-2">Short Story</p>
+					<p class="text-sm opacity-75">"As he sat and regained his breath, he noted that he was feeling warm and comfortable. He was not shaking, and it even seemed that a
+warm glow had come to his body. And yet, when he touched his nose or face, there was no feeling."</p>
+					<p class="mt-4 text-xs opacity-50">
+						<time>January 12, 2026</time>
+					</p>
+				</div>
+			</article>
+			<article class="pb-4">
+				<div>
+					<img class="aspect-4/3 object-cover" src="https://images.unsplash.com/photo-1716428401265-6e0ed6cf32bc" alt="cover image">
+				</div>
+				<div class="py-2">
+					<h3 class="md:text-2xl text-xl font-pt-serif">Unapologetic Authenticity and the Future of Poetry | A Conversation with Ivanna Vasylchenko</h3>
+					<p class="text-xs opacity-50 mb-2">Interview</p>
+					<p class="text-sm opacity-75">"Can poetry be any more honest than it is today? My answer is not only a resounding 'yes'—I believe the role of poetry as a way of exploring what it means to be human is only just beginning."</p>
+					<p class="mt-4 text-xs opacity-50">
+						<time>January 12, 2026</time>
+					</p>
+				</div>
+			</article>
+			<article class="pb-4">
+				<div>
+					<img class="aspect-4/3 object-cover" src="https://images.unsplash.com/photo-1471518641929-b7cc13b16ccd?" alt="cover image">
+				</div>
+				<div class="py-2">
+					<h3 class="md:text-2xl text-xl font-pt-serif">Can You See the Sky?</h3>
+					<p class="text-xs opacity-50 mb-2">Essay</p>
+					<p class="text-sm opacity-75">"Do you see it? Do you look up? Or is the sky simply an afterthought? Or, worse still, can you see the sky at all?"</p>
+					<p class="mt-4 text-xs opacity-50">
+						<time>January 12, 2026</time>
+					</p>
+				</div>
+			</article>
+			<article class="pb-4">
+				<div>
+					<img class="aspect-4/3 object-cover" src="https://images.unsplash.com/photo-1504805402391-d11b68988fd2" alt="cover image">
+				</div>
+				<div class="py-2">
+					<h3 class="md:text-2xl text-xl font-pt-serif">Snowfall</h3>
+					<p class="text-xs opacity-50 mb-2">Short Story</p>
+					<p class="text-sm opacity-75">"Not a soul on the streets, but I am walking; there are voices inside my head."</p>
+					<p class="mt-4 text-xs opacity-50">
+						<time>January 12, 2026</time>
+					</p>
+				</div>
+			</article>
+		</div>
+	</section>
+</main>
